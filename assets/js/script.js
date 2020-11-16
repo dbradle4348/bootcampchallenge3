@@ -20,7 +20,7 @@ function writePassword() {
 
   var newPass = "";
   var passSet = "";
-  passwordText.value = password;
+  
 
   // lower case characters
   var passLengthQuestion = window.prompt("How many characters would you like to use for the password?");
@@ -73,12 +73,13 @@ function writePassword() {
       localStorage.setItem("password", newPass);
         var newPassStr = localStorage.getItem("password");
         passwordText.textContent = newPassStr;
-    };
-  };
-alert("your new password is" + nePassStr)
+    
+      };
+ 
+ 
 };
 
-
+};
 
 
 
