@@ -71,10 +71,11 @@ function writePassword() {
       newPass += passSet.charAt(Math.floor(Math.random() * passSet.length));
       
       localStorage.setItem("password", newPass);
-        let newPassStr = localStorage.getItem(newPass);
-        passwordText.textContent = newPasswordStr;
+        var newPassStr = localStorage.getItem("password");
+        passwordText.textContent = newPassStr;
     };
   };
+alert("your new password is" + nePassStr)
 };
 
 
