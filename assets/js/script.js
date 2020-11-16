@@ -20,7 +20,6 @@ function writePassword() {
 
   var newPass = "";
   var passSet = "";
-  
 
   // lower case characters
   var passLengthQuestion = window.prompt("How many characters would you like to use for the password?");
@@ -35,7 +34,7 @@ function writePassword() {
     var lowerQuestion = confirm("Would you like to include lower case characters?");
 
     if (lowerQuestion) {
-      passSet += lowerQuestion;
+      passSet += lowercaseLetters;
     }
 
     // upper case characters
@@ -43,33 +42,34 @@ function writePassword() {
     var upperQuestion = confirm("Would you like to include upper case characters?");
 
     if (upperQuestion) {
-      passSet += upperQuestion;
+      passSet += uppercaseLetters;
     }
 
     // number characters
 
-    var numQuestion = confirm("Would you like to include numbers in your password?")
+    var numQuestion = confirm("Would you like to include numbers in your password?");
     
     if (numQuestion) {
-      passSet += numQuestion;
+      passSet += numberCharacters;
     }
     // special characters
 
-    var specQuestion = confirm("Almost done! Would you like to include special characters in you password?")
+    var specQuestion = confirm("Almost done! Would you like to include special characters in you password?");
 
     if (specQuestion) {
-      passSet += specQuestion;
+      passSet += specialCharacters;
     }
 
     if (!lowerQuestion && !upperQuestion && !numQuestion && !specQuestion) {
-      window.alert("Please select at least one of these character types!")
+      window.alert("Please select at least one of these character types!");
     }
+
 
     //variable loop stuff
   if (Number(passLengthQuestion >= 8) && Number(passLengthQuestion <= 128)) {
     for (var i = 0; i < passLengthQuestion; i++) {
       newPass += passSet.charAt(Math.floor(Math.random() * passSet.length));
-      
+    };
       localStorage.setItem("password", newPass);
         var newPassStr = localStorage.getItem("password");
         passwordText.textContent = newPassStr;
@@ -79,7 +79,6 @@ function writePassword() {
  
 };
 
-};
 
 
 
